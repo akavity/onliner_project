@@ -54,5 +54,4 @@ public class RegistrationFromPage {
     public void clickSubmitButton() {
         submitButton.click();
     }
-
 }

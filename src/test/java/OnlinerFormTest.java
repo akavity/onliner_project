@@ -27,12 +27,11 @@ public class OnlinerFormTest {
         registrationFromPage = new RegistrationFromPage(driver, wait);
     }
 
-    @Test
-    public void checkRegistrationOnliner() {
-
 //        WebElement enterButton = driver.findElement(By.xpath("//div[@class=\"auth-bar__item auth-bar__item--text\"]"));
 //        enterButton.click();
 
+    @Test
+    public void checkRegistrationOnliner() {
         registrationFromPage.enterEmail("wipilet483@onlcool.com");
         registrationFromPage.enterPassword("Ed9KDd55jWHW6k");
         registrationFromPage.enterPasswordAgan("Ed9KDd55jWHW6k");
