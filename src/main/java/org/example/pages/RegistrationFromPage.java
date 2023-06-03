@@ -29,10 +29,9 @@ public class RegistrationFromPage {
 //    @FindBy(xpath = "//a[@href=\"http://mail.onlcool.com/\"]")
 //            private WebElement goToMailButton;
 
-    public RegistrationFromPage(WebDriver driver, WebDriverWait wait) {
+    public RegistrationFromPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        this.wait = wait;
     }
 
     public void enterEmail(String email) {
