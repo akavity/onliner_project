@@ -11,8 +11,6 @@ public class OnlinerFormTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationFromPage registrationFromPage;
 
-    //        WebElement enterButton = driver.findElement(By.xpath("//div[@class=\"auth-bar__item auth-bar__item--text\"]"));
-//        enterButton.click();
     @BeforeClass
     public void preparationForTest() {
         driver = DriverManager.getDriver();
