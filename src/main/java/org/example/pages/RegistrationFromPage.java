@@ -25,9 +25,6 @@ public class RegistrationFromPage extends BasePage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement submitButton;
 
-//    @FindBy(xpath = "//a[@href=\"http://mail.onlcool.com/\"]")
-//            private WebElement goToMailButton;
-
     public RegistrationFromPage(WebDriver driver) {
         super(driver);
     }
