@@ -1,8 +1,6 @@
 import org.example.driver.DriverManager;
 import org.example.pages.RegistrationFromPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -25,9 +23,6 @@ public class OnlinerFormTest extends BaseTest {
         registrationFromPage.clickConsentButton();
         registrationFromPage.clickSubmitButton();
 
-        WebElement goToMailButton = driver.findElement(By.
-                xpath("//a[@href=\"http://mail.onlcool.com/\"]"));
-
-        Assert.assertTrue(goToMailButton.getText().contains("Перейти в почту"));
+        Assert.assertTrue(registrationFromPage.getTextGoToMail().contains("Перейти в почту"));
     }
 }

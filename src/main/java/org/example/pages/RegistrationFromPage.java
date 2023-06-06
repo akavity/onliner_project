@@ -25,6 +25,9 @@ public class RegistrationFromPage extends BasePage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     private WebElement submitButton;
 
+    @FindBy(xpath = "//a[@href=\"http://mail.onlcool.com/\"]")
+    private WebElement goButton;
+
     public RegistrationFromPage(WebDriver driver) {
         super(driver);
     }
@@ -52,5 +55,10 @@ public class RegistrationFromPage extends BasePage {
     public void clickSubmitButton() {
         log.info("Enter submit button");
         submitButton.click();
+    }
+
+    public String getTextGoToMail() {
+        log.info("Get text go to mail button");
+        return goButton.getText();
     }
 }
