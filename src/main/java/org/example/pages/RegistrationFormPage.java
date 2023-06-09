@@ -1,12 +1,10 @@
 package org.example.pages;
 
-import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@Log4j2
-public class RegistrationFromPage extends BasePage {
+public class RegistrationFormPage extends BasePage {
 
     protected WebDriver driver;
 
@@ -28,7 +26,7 @@ public class RegistrationFromPage extends BasePage {
     @FindBy(xpath = "//a[@href=\"http://mail.onlcool.com/\"]")
     private WebElement goButton;
 
-    public RegistrationFromPage(WebDriver driver) {
+    public RegistrationFormPage(WebDriver driver) {
         super(driver);
     }
 
