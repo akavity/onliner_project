@@ -1,6 +1,6 @@
 import org.example.driver.DriverManager;
 import org.example.models.UserData;
-import org.example.pages.RegistrationFromPage;
+import org.example.steps.RegistrationFormSteps;
 import org.example.utils.JsonReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -9,22 +9,22 @@ import org.testng.annotations.Test;
 
 public class OnlinerFormTest extends BaseTest {
     protected WebDriver driver;
-    private RegistrationFromPage registrationFromPage;
+    private RegistrationFormSteps registrationFormSteps;
 
     @BeforeClass
     public void preparationForTest() {
         driver = DriverManager.getDriver();
-        registrationFromPage = new RegistrationFromPage(driver);
+        registrationFormSteps = new RegistrationFormSteps(driver);
     }
 
     @Test(dataProvider = "userData", dataProviderClass = JsonReader.class)
     public void checkRegistrationOnliner(UserData userData) {
-        registrationFromPage.enterEmail(userData.getEmail());
-        registrationFromPage.enterPassword(userData.getPassword());
-        registrationFromPage.enterPasswordAgan(userData.getPassword());
-        registrationFromPage.clickConsentButton();
-        registrationFromPage.clickSubmitButton();
+        registrationFormSteps.enterEmail(userData.getEmail());
+        registrationFormSteps.enterPassword(userData.getPassword());
+        registrationFormSteps.enterPasswordAgan(userData.getPassword());
+        registrationFormSteps.clickConsentButton();
+        registrationFormSteps.clickSubmitButton();
 
-        Assert.assertTrue(registrationFromPage.getTextGoToMail().contains("Перейти в почту"));
+        Assert.assertTrue(registrationFormSteps.getTextGoToMail().contains(userData.getText()));
     }
 }

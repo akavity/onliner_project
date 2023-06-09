@@ -1,7 +1,6 @@
 package org.example.pages;
 
 import lombok.extern.log4j.Log4j2;
-import org.example.utils.Waiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,34 +32,27 @@ public class RegistrationFromPage extends BasePage {
         super(driver);
     }
 
-    public void enterEmail(String email) {
-        Waiters.waitForVisibility(emailField);
-        log.info("Enter email");
-        emailField.sendKeys(email);
+    public WebElement getEmail() {
+        return emailField;
     }
 
-    public void enterPassword(String password) {
-        log.info("Enter password");
-        passwordField.sendKeys(password);
+    public WebElement getPassword() {
+        return passwordField;
     }
 
-    public void enterPasswordAgan(String password) {
-        log.info("Enter password agan");
-        repeatPasswordField.sendKeys(password);
+    public WebElement getPasswordAgan() {
+        return repeatPasswordField;
     }
 
-    public void clickConsentButton() {
-        log.info("Enter consent button");
-        consentButton.click();
+    public WebElement getConsentButton() {
+        return consentButton;
     }
 
-    public void clickSubmitButton() {
-        log.info("Enter submit button");
-        submitButton.click();
+    public WebElement getSubmitButton() {
+        return submitButton;
     }
 
-    public String getTextGoToMail() {
-        log.info("Get text go to mail button");
-        return goButton.getText();
+    public WebElement getTextGoToMail() {
+        return goButton;
     }
 }
