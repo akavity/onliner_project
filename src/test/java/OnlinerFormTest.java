@@ -1,12 +1,16 @@
+import io.qameta.allure.Link;
 import org.example.driver.DriverManager;
 import org.example.models.UserData;
 import org.example.steps.RegistrationFormSteps;
+import org.example.utils.AllureListener;
 import org.example.utils.JsonReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners({AllureListener.class})
 public class OnlinerFormTest extends BaseTest {
     protected WebDriver driver;
     private RegistrationFormSteps registrationFormSteps;
@@ -17,7 +21,9 @@ public class OnlinerFormTest extends BaseTest {
         registrationFormSteps = new RegistrationFormSteps(driver);
     }
 
-    @Test(dataProvider = "userData", dataProviderClass = JsonReader.class)
+    @Link("https://profile.onliner.by/registration")
+    @Test(description = "Check registration form onliner",
+            dataProvider = "userData", dataProviderClass = JsonReader.class)
     public void checkRegistrationOnliner(UserData userData) {
         registrationFormSteps.enterEmail(userData.getEmail());
         registrationFormSteps.enterPassword(userData.getPassword());
