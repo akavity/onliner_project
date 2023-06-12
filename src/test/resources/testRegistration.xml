@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainTest">
+    <listeners>
+        <listener class-name="org.example.utils.AllureListener"/>
+    </listeners>
+    <test name="MainTest" parallel="false">
+        <classes>
+            <class name="OnlinerFormTest">
+                <methods>
+                    <include name="checkRegistrationOnliner"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
